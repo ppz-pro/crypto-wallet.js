@@ -1,0 +1,26 @@
+{
+  "name": "@ppzp/dwallet",
+  "version": "0.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "watch-build": "coffee -cw ./"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ppz-pro/dwallet-utils.js.git"
+  },
+  "keywords": [
+    "web3",
+    "ethereum"
+  ],
+  "author": "gy0318",
+  "license": "Unlicense",
+  "bugs": {
+    "url": "https://github.com/ppz-pro/dwallet-utils.js/issues"
+  },
+  "homepage": "https://github.com/ppz-pro/dwallet-utils.js#readme",
+  "devDependencies": {
+    "coffeescript": "^2.7.0"
+  }
+}
