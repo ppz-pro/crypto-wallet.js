@@ -3,11 +3,17 @@ import { BrowserWallet } from './index'
 export class MetamaskBrowserWallet extends BrowserWallet
   constructor: () ->
     super(window.ethereum)
+    ethereum.on('accountsChanged', (accounts) =>
+      @accountChangeEvent.emit(accounts[0])
+    )
 
-  connect: () ->
+  getAccount: () ->
+    @provider.request({ method: 'eth_requestAccounts' })
 
   getChainId: () ->
     @provider.request({ method: 'eth_chainId' })
+  checkChainId: (chainId) ->
+    chainId == await @getChainId()
 
   addNetwork: (network) ->
     @provider.request({

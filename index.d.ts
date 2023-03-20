@@ -1,3 +1,5 @@
+import Event from '@ppzp/utils/event'
+
 export class NativeCurrency {
   name: string
   decimal: number
@@ -15,5 +17,7 @@ export class Network {
 
 export class BrowserWallet {
   provider: any
+  accountChangeEvent: Event
+  chainChangeEvent: Event
   constructor(provider: any) {}
 }

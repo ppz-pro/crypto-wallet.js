@@ -22,5 +22,8 @@
   "homepage": "https://github.com/ppz-pro/dwallet-utils.js#readme",
   "devDependencies": {
     "coffeescript": "^2.7.0"
+  },
+  "peerDependencies": {
+    "@ppzp/utils": ">=0.0.8"
   }
 }

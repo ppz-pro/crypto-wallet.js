@@ -1,3 +1,5 @@
+import Event from '@ppzp/utils/event'
+
 export class NativeCurrency
   constructor: (@name, @decimals, @symbol) -> 
 
@@ -7,3 +9,5 @@ export class Network
 
 export class BrowserWallet
   constructor: (@provider) ->
+    @accountChangeEvent = Event()
+    @chainChangeEvent = Event()
