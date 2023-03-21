@@ -33,7 +33,7 @@ export class BrowserWallet {
   /** 获取当前连接的链的 id */
   getChainId(): Promise<string>
   /** 检查当前链 id 是否是目标 id */
-  checkChainId(chainId: number): Promise<boolean>
+  checkChainId(chainId: string): Promise<boolean>
   /** 添加网络（链） */
   addNetwork(network: Network): Promise<void>
   /** 切换网络（链） */
