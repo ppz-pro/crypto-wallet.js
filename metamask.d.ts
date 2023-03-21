@@ -1,9 +1,6 @@
 import { BrowserWallet, Network } from './index'
 
+/** Metamask 钱包：作为一个浏览器插件 */
 export class MetamaskBrowserWallet extends BrowserWallet {
-  getAccount(): void
-  getChainId(): void
-  checkChainId(chainId: number): boolean
-  addNetwork(network: Network): void
-  switchNetwork(network: Network): void
+  constructor()
 }

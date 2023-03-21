@@ -2,6 +2,8 @@ import { BrowserWallet } from './index'
 
 export class MetamaskBrowserWallet extends BrowserWallet
   constructor: () ->
+    unless window.ethereum
+      throw Error '浏览器未安装钱包插件，如 Metamask'
     super(window.ethereum)
     ethereum.on('accountsChanged', (accounts) =>
       @accountChangeEvent.emit(accounts[0])
