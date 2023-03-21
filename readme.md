@@ -10,7 +10,7 @@
 ## 怎么用？
 ##### 安装
 ``` bash
-npm install crypto-wallet
+npm install @ppzp/crypto-wallet
 ```
 
 ## 反馈
