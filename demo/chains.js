@@ -1,4 +1,4 @@
-import { Network, NativeCurrency } from '../'
+import { Network, NativeCurrency } from 'crypto-wallet'
 
 export
 const bscChain = new Network(

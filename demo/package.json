@@ -6,5 +6,8 @@
   },
   "devDependencies": {
     "vite": "^4.2.0"
+  },
+  "dependencies": {
+    "crypto-wallet": "file:../crypto-wallet-0.0.0.tgz"
   }
 }

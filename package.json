@@ -6,6 +6,13 @@
   "scripts": {
     "watch-build": "coffee -cw ./"
   },
+  "files": [
+    "index.js",
+    "index.d.ts",
+    "metamask.js",
+    "metamask.d.ts",
+    "LICENSE"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/ppz-pro/dwallet-utils.js.git"

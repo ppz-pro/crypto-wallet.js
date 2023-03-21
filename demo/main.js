@@ -1,4 +1,4 @@
-import { MetamaskBrowserWallet } from '../metamask'
+import { MetamaskBrowserWallet } from 'crypto-wallet/metamask'
 import { bscChain, bscTestChain } from './chains'
 
 const wallet = new MetamaskBrowserWallet()
