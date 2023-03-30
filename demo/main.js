@@ -1,43 +1,46 @@
-import { MetamaskBrowserWallet } from 'crypto-wallet/metamask'
-import { bscChain, bscTestChain } from './chains'
+import { getProviderWrapper } from '../index.js'
+import { bsc, bscTest, ethc } from './chains.js'
 
-const wallet = new MetamaskBrowserWallet()
-const body = document.querySelector('body')
+const provider = getProviderWrapper(ethereum)
+const el = selector => document.getElementById(selector)
 
-function addBtn(network) {
-  const button = document.createElement('button')
-  button.innerHTML = 'connect ' + network.name
-  button.onclick = async function() {
-    console.log('connecting ' + network.name)
-    const chainId = await wallet.getChainId()
-    if(chainId == network.id) {
-      console.log('already on ' + network.name)
-      return
-    }
-    try {
-      await wallet.switchNetwork(network)
-    } catch(err) {
-      console.log({ err })
-    }
-  }
-  body.appendChild(button)
+// test get account
+el('getAccount').onclick = async function() {
+  const account = await provider.getAccount()
+  el('account').innerText = account
 }
-addBtn(bscChain)
-addBtn(bscTestChain)
+provider.onAccountChanged((account) => {
+  el('account').innerText = account
+})
 
-// accounts
-;(async function() {
-  const button = document.createElement('button')
-  const accountDiv = document.createElement('div')
+// test get chainId
+el('getChainId').onclick = async function() {
+  const chainId = await provider.getChainId()
+  el('chainId').innerText = chainId
+}
+provider.onChainChanged((chainId) => {
+  el('chainId').innerText = chainId
+})
 
-  button.innerHTML = 'connect account'
-  button.onclick = async function() {
-    accountDiv.innerHTML = (await wallet.getAccount()) || 'no account'
-  }
-  wallet.accountChangeEvent.listen(account => {
-    accountDiv.innerHTML = account || 'no account'
-  })
+// test add network
+el('addBSC').onclick = async function() {
+  console.log({ bsc })
+  provider.addNetwork(bsc)
+}
+el('addBSCTest').onclick = async function() {
+  provider.addNetwork(bscTest)
+}
+el('addETH').onclick = async function() {
+  provider.addNetwork(ethc)
+}
 
-  body.appendChild(button)
-  body.appendChild(accountDiv)
-})()
+// test switch network
+el('switchBSC').onclick = async function() {
+  await provider.switchNetwork(bsc)
+}
+el('switchBSCTest').onclick = async function() {
+  await provider.switchNetwork(bscTest)
+}
+el('switchETH').onclick = async function() {
+  await provider.switchNetwork(ethc)
+}

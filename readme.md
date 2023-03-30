@@ -1,5 +1,5 @@
 # crypto-wallet.js
-**简化**和**统一**加密钱包（crypto wallet）的操作：
+**简化** web3 常用操作：
 + 连接钱包
 + 检查链 id（chainId）
 + 切换链

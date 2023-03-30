@@ -1,22 +1,29 @@
-import { Network, NativeCurrency } from 'crypto-wallet'
+import { Network } from '../index.js'
 
 export
-const bscChain = new Network(
+const bsc = new Network(
   '0x38',
   'Binance Smart Chain Mainnet',
-  new NativeCurrency('BNB', 18, 'BNB'),
   [
     'https://bsc-dataseed.binance.org/'
   ]
 )
 
 export
-const bscTestChain = new Network(
+const bscTest = new Network(
   '0x61',
   'BSC Testnet',
-  new NativeCurrency('BNB', 18, 'tBNB'),
   [
     'https://data-seed-prebsc-1-s1.binance.org:8545/',
     'https://data-seed-prebsc-2-s1.binance.org:8545/'
+  ]
+)
+
+export
+const ethc = new Network(
+  '0x1',
+  'Ethereum Mainnet',
+  [
+    'https://mainnet.infura.io/v3/9aa3d95b3bc440fa88ea12eaa4456161'
   ]
 )

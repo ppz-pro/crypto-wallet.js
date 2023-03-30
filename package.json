@@ -1,6 +1,6 @@
 {
-  "name": "@ppzp/crypto-wallet",
-  "version": "0.0.1",
+  "name": "@ppzp/dutils",
+  "version": "0.0.2",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -9,28 +9,24 @@
   "files": [
     "index.js",
     "index.d.ts",
-    "metamask.js",
-    "metamask.d.ts",
     "LICENSE"
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ppz-pro/dwallet-utils.js.git"
+    "url": "git+https://github.com/ppz-pro/dutils.js.git"
   },
   "keywords": [
     "web3",
+    "ethers",
     "ethereum"
   ],
   "author": "gy0318",
   "license": "Unlicense",
   "bugs": {
-    "url": "https://github.com/ppz-pro/dwallet-utils.js/issues"
+    "url": "https://github.com/ppz-pro/dutils.js/issues"
   },
-  "homepage": "https://github.com/ppz-pro/dwallet-utils.js#readme",
+  "homepage": "https://github.com/ppz-pro/dutils.js#readme",
   "devDependencies": {
     "coffeescript": "^2.7.0"
-  },
-  "peerDependencies": {
-    "@ppzp/utils": ">=0.0.8"
   }
 }

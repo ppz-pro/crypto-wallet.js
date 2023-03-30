@@ -5,6 +5,34 @@
   </head>
   <body>
     <h1>@ppzp/dwallet</h1>
-    <script type="module" src="/main.js"></script>
+
+    <section>
+      <h2>get account</h2>
+      <button id="getAccount">get account</button>
+      <div id="account"></div>
+    </section>
+
+    <section>
+      <h2>get chainId</h2>
+      <button id="getChainId">get chainId</button>
+      <div id="chainId"></div>
+    </section>
+
+    <section>
+      <h2>switchNetwork</h2>
+      <button id="switchBSC">switch bsc</button>
+      <button id="switchBSCTest">switch bsc test</button>
+      <button id="switchETH">switch eth</button>
+    </section>
+
+    <section>
+      <h2>addNetwork</h2>
+      <p>应优先使用 switchNetwork，因为 network 可能已存在。</p>
+      <button id="addBSC">add bsc</button>
+      <button id="addBSCTest">add bsc test</button>
+      <button id="addETH">add eth</button>
+    </section>
+
+    <script type="module" src="./main.js"></script>
   </body>
 </html>
