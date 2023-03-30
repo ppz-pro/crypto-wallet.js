@@ -11,7 +11,7 @@ export class ProviderWrapper
   getAccounts: () ->
     @send('eth_requestAccounts')
   getAccount: () ->
-    (await @getAccounts())[0]
+    (await @getAccounts())[0] || null
 
   getChainId: () ->
     @send('eth_chainId')

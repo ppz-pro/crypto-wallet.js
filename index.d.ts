@@ -18,7 +18,7 @@ export class ProviderWrapper {
   /** 获取当前账户 */
   getAccounts(): Promise<string[]>
   /** 获取当前账户（一个） */
-  getAccount(): Promise<string | undefined>
+  getAccount(): Promise<string | null>
   /** 获取当前连接的链的 id */
   getChainId(): Promise<string>
   /** 检查当前链 id 是否是目标 id */
@@ -36,3 +36,6 @@ export class ProviderWrapper {
   /** 监听链变化 */
   onChainChanged(listener: (chainId: string) => void): removeListener
 }
+
+/** 获取单例 provider wrapper */
+export function getProviderWrapper(provider: any): ProviderWrapper
