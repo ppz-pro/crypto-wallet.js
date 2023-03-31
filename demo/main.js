@@ -1,7 +1,8 @@
-import { getProviderWrapper } from '../index.js'
+import getProviderWrapper from '../get-provider-wrapper.js'
 import { bsc, bscTest, ethc } from './chains.js'
 
-const provider = getProviderWrapper(ethereum)
+getProviderWrapper.set(ethereum)
+const provider = getProviderWrapper()
 const el = selector => document.getElementById(selector)
 
 // test get account
@@ -10,6 +11,7 @@ el('getAccount').onclick = async function() {
   el('account').innerText = account
 }
 provider.onAccountChanged((account) => {
+  console.log('account changed', account)
   el('account').innerText = account
 })
 
