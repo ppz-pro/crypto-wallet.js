@@ -6,6 +6,7 @@ export class ProviderWrapper
   constructor: (@provider) ->
 
   send: (method, params) ->
+    # https://ethereum.org/en/developers/docs/apis/json-rpc/#json-rpc-methods
     @provider.request({ method, params })
 
   getAccounts: () ->
